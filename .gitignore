@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# Dependencies
+**/node_modules
+
+# Local binaries temporary files
+.yarn
+*.log
+
+# Vim
+*.swp
+
+# VSCode
+.history

@@ -1,0 +1,13 @@
+{
+  "name": "habit-mapper-app",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Simple application to map habits. Built with Ionic, Angular, NestJS, Postgres, Docker and AWS.",
+  "main": "index.js",
+  "repository": "https://github.com/Daymannovaes/habit-mapper-app.git",
+  "author": "Dayman Novaes <daymannovaes@gmail.com>",
+  "license": "BSD",
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
