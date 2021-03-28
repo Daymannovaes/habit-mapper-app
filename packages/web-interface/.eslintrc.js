@@ -1,7 +1,7 @@
 module.exports = {
   env: {
     es2021: true,
-    node: true,
+    browser: true,
     jest: true,
   },
   extends: [
@@ -34,5 +34,6 @@ module.exports = {
    ],
    'no-useless-constructor': 0,
    'import/prefer-default-export': 0,
+   '@typescript-eslint/no-empty-function': 0,
   },
 };
