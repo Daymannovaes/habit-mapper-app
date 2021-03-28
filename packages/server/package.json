@@ -22,5 +22,8 @@
   },
   "bugs": {
     "url": "https://github.com/Daymannovaes/habit-mapper-app/issues"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^7.6.0"
   }
 }
