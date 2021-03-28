@@ -1,0 +1,7 @@
+{
+  "name": "Habit Mapper App",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
