@@ -7,6 +7,11 @@
   "repository": "https://github.com/Daymannovaes/habit-mapper-app.git",
   "author": "Dayman Novaes <daymannovaes@gmail.com>",
   "license": "BSD",
+  "scripts": {
+    "start": "start:dev",
+    "start:dev:client": "cd packages/web-interface && yarn start:dev",
+    "start:dev:server": "cd packages/server && yarn start:dev"
+  },
   "devDependencies": {
     "lerna": "^4.0.0"
   }
