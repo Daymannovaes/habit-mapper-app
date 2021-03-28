@@ -1,11 +1,3 @@
 # `web-interface`
 
-> TODO: description
-
-## Usage
-
-```
-const webInterface = require('web-interface');
-
-// TODO: DEMONSTRATE API
-```
+Graphical Interfaces for the Habit Mapper App.
