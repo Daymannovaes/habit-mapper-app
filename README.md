@@ -28,13 +28,13 @@ Simple application to map habits based in [Judson Brewer's research](https://drj
 #todo Habit Strategy
 
 - Habit To Be Changed
-- ... trigger, behavior, reward, etc.
+- ... trigger, behavior, reward strategies etc.
 
 ## Technology Stack
 
-- [ ]  Ionic
-- [ ]  Angular
-- [ ]  NestJS
+- [x]  Ionic
+- [x]  Angular
+- [x]  NestJS
 - [ ]  Postgres
 - [ ]  Docker
 - [ ]  AWS
