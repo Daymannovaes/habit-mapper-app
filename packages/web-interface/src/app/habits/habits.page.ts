@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { Habit } from '../../../../entities/lib/habit.entity';
 
 @Component({
   selector: 'app-habits',
@@ -6,7 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./habits.page.scss'],
 })
 export class HabitsPage implements OnInit {
-  constructor() {}
+  constructor(private router: Router) {}
 
-  ngOnInit() {}
+  habits: Habit[] = [];
+
+  ngOnInit() {
+    this.router.events.subscribe((val) => {
+      // @todo use observable filters
+      if (val instanceof NavigationEnd) {
+        const { state } = this.router.getCurrentNavigation().extras;
+
+        if (state && state.newHabit) {
+          this.habits.push(state.newHabit);
+        }
+      }
+    });
+  }
 }

@@ -5,5 +5,13 @@
 </ion-header>
 
 <ion-content>
+  <div *ngFor="let habit of habits">
+    <p>Trigger: {{ habit.trigger }}</p>
+    <p>Behavior: {{ habit.behavior }}</p>
+    <p>Reward: {{ habit.reward }}</p>
 
+    <br />
+  </div>
+
+  <a routerLink="create">Create a new habit</a>
 </ion-content>
