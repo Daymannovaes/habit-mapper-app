@@ -9,7 +9,7 @@
   "license": "BSD",
   "scripts": {
     "start": "start:dev",
-    "start:dev:client": "cd packages/web-interface && yarn start:dev",
+    "start:dev:client": "cd packages/interfaces && yarn start:dev",
     "start:dev:server": "cd packages/server && yarn start:dev"
   },
   "devDependencies": {

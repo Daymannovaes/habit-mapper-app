@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
-import { Habit } from '../../../../../entities'; // @todo import as lerna package
+import { Habit } from '../../../../../entities/lib/entities'; // @todo import as lerna package
 import { HabitsService } from '../habits.service';
 @Component({
   selector: 'app-edit',
