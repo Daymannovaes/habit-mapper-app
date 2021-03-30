@@ -2,7 +2,7 @@
   "appId": "io.ionic.starter",
   "appName": "Habit Mapper App",
   "bundledWebRuntime": false,
-  "npmClient": "npm",
+  "npmClient": "yarn",
   "webDir": "www",
   "plugins": {
     "SplashScreen": {
