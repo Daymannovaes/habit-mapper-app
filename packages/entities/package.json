@@ -1,16 +1,16 @@
 {
-  "name": "entities",
+  "name": "@habit-mapper-app/entities",
   "version": "0.1.0",
   "description": "> TODO: description",
   "author": "Dayman Novaes <daymannovaes@gmail.com>",
   "homepage": "https://github.com/Daymannovaes/habit-mapper-app#readme",
   "license": "ISC",
-  "main": "lib/entities.ts",
+  "main": "source/index.ts",
   "directories": {
-    "lib": "lib"
+    "source": "source"
   },
   "files": [
-    "lib"
+    "source"
   ],
   "repository": {
     "type": "git",

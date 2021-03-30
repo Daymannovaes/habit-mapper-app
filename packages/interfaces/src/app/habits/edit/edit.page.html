@@ -9,15 +9,15 @@
   <form [formGroup]="form" (ngSubmit)="onFormSubmit()">
     <ion-item>
       <ion-label>Trigger</ion-label>
-      <ion-input formControlName="trigger"></ion-input>
+      <ion-input type="text" formControlName="trigger"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Behavior</ion-label>
-      <ion-input formControlName="behavior"></ion-input>
+      <ion-input type="text" formControlName="behavior"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Reward</ion-label>
-      <ion-input formControlName="reward"></ion-input>
+      <ion-input type="text" formControlName="reward"></ion-input>
     </ion-item>
 
     <ion-button expand="block" type="submit" [disabled]="form.invalid">Map my habit!</ion-button>
