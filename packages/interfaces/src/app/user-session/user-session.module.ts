@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
+import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
 import { UserSessionPageRoutingModule } from './user-session-routing.module';
 
 import { UserSessionPage } from './user-session.page';
@@ -14,6 +15,7 @@ import { UserSessionPage } from './user-session.page';
     FormsModule,
     IonicModule,
     UserSessionPageRoutingModule,
+    AmplifyUIAngularModule,
   ],
   declarations: [UserSessionPage],
 })

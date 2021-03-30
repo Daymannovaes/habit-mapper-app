@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "habitmapperappece215c7": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
