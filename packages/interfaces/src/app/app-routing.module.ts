@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { AuthenticationGuard } from './authentication/authentication.guard';
+import { AuthenticatedGuard } from './authentication/authenticated.guard';
+import { UnauthenticatedGuard } from './authentication/unauthenticated.guard';
 
 const routes: Routes = [
   {
     path: 'sessions',
+    canActivate: [UnauthenticatedGuard],
     loadChildren: () =>
       import('./user-session/user-session.module').then(
         (m) => m.UserSessionPageModule
@@ -24,7 +26,7 @@ const routes: Routes = [
   },
   {
     path: 'habits',
-    canActivate: [AuthenticationGuard],
+    canActivate: [AuthenticatedGuard],
     loadChildren: () =>
       import('./habits/habits.module').then((m) => m.HabitsPageModule),
   },

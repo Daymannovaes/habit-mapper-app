@@ -1,14 +1,28 @@
 import { Injectable } from '@angular/core';
-
+import { Auth as AwsAuth } from 'aws-amplify';
+// import { AuthClass } from '@aws-amplify/auth/Auth';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthenticationService {
-  constructor() {}
+  constructor() {
+    this.provider = AwsAuth;
+  }
 
-  isAuthenticated = false;
+  // private provider: AuthClass;
+  private provider;
 
-  isUserAuthenticated(): boolean {
-    return this.isAuthenticated;
+  async getUserSession() {
+    try {
+      return await this.provider.currentSession();
+    } catch (_) {
+      return undefined;
+    }
+  }
+
+  async isUserAuthenticated(): Promise<boolean> {
+    const session = await this.getUserSession();
+
+    return Boolean(session);
   }
 }
