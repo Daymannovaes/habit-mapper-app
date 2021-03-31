@@ -5,7 +5,7 @@
   "author": "Dayman Novaes <daymannovaes@gmail.com>",
   "homepage": "https://github.com/Daymannovaes/habit-mapper-app#readme",
   "license": "ISC",
-  "main": "source/index.ts",
+  "main": "source/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Daymannovaes/habit-mapper-app.git"
