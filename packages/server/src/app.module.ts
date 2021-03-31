@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import ormConfig from '@habit-mapper-app/infrastructure/database/config/ormconfig';
+import { getOrmConfig } from '@habit-mapper-app/infrastructure/database/configuration';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthenticationModule } from './authentication/authentication.module';
 
 @Module({
-  imports: [AuthenticationModule, TypeOrmModule.forRoot(ormConfig)],
+  imports: [AuthenticationModule, TypeOrmModule.forRoot(getOrmConfig())],
   controllers: [AppController],
   providers: [AppService],
 })
