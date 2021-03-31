@@ -14,11 +14,13 @@ export class EditPage implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private habitService: HabitsService
-  ) {}
+  ) {
+    // this.habit = new Habit(); // no working??
+  }
 
   habitId: string;
 
-  @Input() habit: Habit = new Habit();
+  @Input() habit: Habit;
 
   form: FormGroup;
 
