@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Habit } from '../../../../entities/lib/habit.entity';
+import { Habit } from '@habit-mapper-app/entities';
 
 @Injectable({
   providedIn: 'root',

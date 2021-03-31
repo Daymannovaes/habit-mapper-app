@@ -1,5 +1,5 @@
 {
-  "name": "interfaces",
+  "name": "@habit-mapper-app/interfaces",
   "version": "0.1.0",
   "author": "Dayman Novaes <daymannovaes@gmail.com>",
   "homepage": "https://github.com/Daymannovaes/habit-mapper-app#readme",
@@ -26,6 +26,8 @@
     "@aws-amplify/ui-angular": "^1.0.6",
     "@capacitor/core": "2.4.7",
     "@capacitor/ios": "^2.4.7",
+    "@habit-mapper-app/entities": "^0.1.0",
+    "@habit-mapper-app/infrastructure": "^0.1.0",
     "@ionic/angular": "^5.5.2",
     "aws-amplify": "^3.3.26",
     "rxjs": "~6.6.0",
