@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { Habit } from '../../../../entities/lib/habit.entity';
+import { Habit } from '@habit-mapper-app/entities';
 
 @Component({
   selector: 'app-habits',
