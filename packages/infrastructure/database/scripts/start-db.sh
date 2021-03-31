@@ -1,10 +1,13 @@
 #!/bin/bash
 set -e
 
-SERVER="habit-mapper-postgres";
-PGUSER="root";
-PW="habitmapperpg";
-DB="root";
+echo "loading variables from database/configuration/.env.${ENV}"
+source database/configuration/.env.${ENV}
+
+SERVER=${DATABASE_DOCKER_NAME};
+PGUSER=${DATABASE_USERNAME};
+PW=${DATABASE_PASSWORD};
+DB=${DATABASE_NAME};
 
 echo "echo stop & remove old docker [$SERVER] and starting new fresh instance of [$SERVER]"
 (docker kill $SERVER || :) && \
