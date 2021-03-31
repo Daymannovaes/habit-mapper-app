@@ -5,7 +5,7 @@
   "author": "Dayman Novaes <daymannovaes@gmail.com>",
   "homepage": "https://github.com/Daymannovaes/habit-mapper-app#readme",
   "license": "ISC",
-  "main": "index.js",
+  "main": "dist/aws-exports.js",
   "publishConfig": {
     "access": "public"
   },
@@ -14,10 +14,18 @@
     "url": "git+https://github.com/Daymannovaes/habit-mapper-app.git"
   },
   "scripts": {
-    "amplify:pull": "amplify pull",
-    "amplify:push": "amplify push"
+    "amplify:pull": "amplify pull && yarn build",
+    "amplify:push": "amplify push",
+    "build": "yarn build:database:config && yarn build:aws:config",
+    "build:database:config": "bash ./tasks/build-database-config.sh",
+    "build:aws:config": "bash ./tasks/build-aws-config.sh",
+    "database:start:dev": "ENV=development bash ./database/scripts/start-db.sh"
   },
   "bugs": {
     "url": "https://github.com/Daymannovaes/habit-mapper-app/issues"
+  },
+  "dependencies": {
+    "@types/node": "^14.14.37",
+    "dotenv": "^8.2.0"
   }
 }

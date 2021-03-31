@@ -19,6 +19,11 @@
 !.vscode/launch.json
 !.vscode/extensions.json
 
+# env and script result files
+.env.production
+database/configuration/package.json
+aws/package.json
+
 #amplify
 amplify/\#current-cloud-backend
 amplify/.config/local-*
