@@ -1,6 +1,6 @@
 // @todo think of a better name for this file
 import Amplify from 'aws-amplify';
-import awsExports from '@habit-mapper-app/infrastructure/dist/aws-exports.js';
+import awsExports from '@habit-mapper-app/infrastructure/aws';
 
 function configureAwsAmplify() {
   Amplify.configure(awsExports);
