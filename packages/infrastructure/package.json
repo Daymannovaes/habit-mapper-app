@@ -1,22 +1,23 @@
 {
-  "name": "@habit-mapper-app/entities",
+  "name": "@habit-mapper-app/infrastructure",
   "version": "0.1.0",
   "description": "> TODO: description",
   "author": "Dayman Novaes <daymannovaes@gmail.com>",
   "homepage": "https://github.com/Daymannovaes/habit-mapper-app#readme",
   "license": "ISC",
-  "main": "source/index.ts",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Daymannovaes/habit-mapper-app.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "amplify:pull": "amplify pull",
+    "amplify:push": "amplify push"
   },
   "bugs": {
     "url": "https://github.com/Daymannovaes/habit-mapper-app/issues"
-  },
-  "dependencies": {
-    "@habit-mapper-app/infrastructure": "^0.1.0"
   }
 }
