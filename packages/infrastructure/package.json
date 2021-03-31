@@ -15,7 +15,8 @@
   },
   "scripts": {
     "amplify:pull": "amplify pull",
-    "amplify:push": "amplify push"
+    "amplify:push": "amplify push",
+    "database:start:dev": "bash ./database/scripts/start-db.sh"
   },
   "bugs": {
     "url": "https://github.com/Daymannovaes/habit-mapper-app/issues"
