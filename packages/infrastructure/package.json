@@ -5,7 +5,7 @@
   "author": "Dayman Novaes <daymannovaes@gmail.com>",
   "homepage": "https://github.com/Daymannovaes/habit-mapper-app#readme",
   "license": "ISC",
-  "main": "index.js",
+  "main": "dist/aws-exports.js",
   "publishConfig": {
     "access": "public"
   },
@@ -14,8 +14,10 @@
     "url": "git+https://github.com/Daymannovaes/habit-mapper-app.git"
   },
   "scripts": {
-    "amplify:pull": "amplify pull",
-    "amplify:push": "amplify push"
+    "amplify:pull": "amplify pull && yarn build",
+    "amplify:push": "amplify push",
+    "build": "yarn build:movefiles && npx tsc",
+    "build:movefiles": "rm -rf dist/ && mkdir -p dist/ && cp src/aws-exports.js dist/aws-exports.ts"
   },
   "bugs": {
     "url": "https://github.com/Daymannovaes/habit-mapper-app/issues"
