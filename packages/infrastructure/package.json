@@ -17,7 +17,8 @@
     "amplify:pull": "amplify pull && yarn build",
     "amplify:push": "amplify push",
     "build": "yarn build:movefiles && npx tsc",
-    "build:movefiles": "rm -rf dist/ && mkdir -p dist/ && cp src/aws-exports.js dist/aws-exports.ts"
+    "build:movefiles": "rm -rf dist/ && mkdir -p dist/ && cp src/aws-exports.js dist/aws-exports.ts",
+    "database:start:dev": "bash ./database/scripts/start-db.sh"
   },
   "bugs": {
     "url": "https://github.com/Daymannovaes/habit-mapper-app/issues"
