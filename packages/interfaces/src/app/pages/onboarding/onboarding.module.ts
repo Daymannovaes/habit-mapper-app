@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { OnboardingPageRoutingModule } from './onboarding-routing.module';
 
 import { OnboardingPage } from './onboarding.page';
+import { OnboardingDoPage } from './do/onboarding-do.page';
+import { OnboardingLearnPage } from './learn/onboarding-learn.page';
 
 @NgModule({
   imports: [
@@ -15,6 +17,6 @@ import { OnboardingPage } from './onboarding.page';
     IonicModule,
     OnboardingPageRoutingModule,
   ],
-  declarations: [OnboardingPage],
+  declarations: [OnboardingPage, OnboardingDoPage, OnboardingLearnPage],
 })
 export class OnboardingPageModule {}

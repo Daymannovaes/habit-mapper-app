@@ -6,22 +6,19 @@ import {
   UrlTree,
   Router,
 } from '@angular/router';
-import { AuthenticationService } from './authentication.service';
+import { UserService } from '../user/user.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthenticatedGuard implements CanActivate {
-  constructor(
-    private authenticationService: AuthenticationService,
-    private router: Router
-  ) {}
+export class AuthGuard implements CanActivate {
+  constructor(private userService: UserService, private router: Router) {}
 
   async canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Promise<boolean | UrlTree> {
-    return (await this.authenticationService.isUserAuthenticated())
+    return (await this.userService.isUserAuthenticated())
       ? true
       : this.router.parseUrl(route.data.redirectTo || '/sessions');
   }

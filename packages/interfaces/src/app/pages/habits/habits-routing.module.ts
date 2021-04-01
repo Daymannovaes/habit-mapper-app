@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { EditHabitPage } from './edit/edit-habit.page';
 
 import { HabitsPage } from './habits.page';
 
@@ -11,14 +12,12 @@ const routes: Routes = [
   {
     path: ':id/edit',
     data: { type: 'edit' },
-    loadChildren: () =>
-      import('./edit/edit.module').then((m) => m.EditPageModule),
+    component: EditHabitPage,
   },
   {
     path: 'create',
     data: { type: 'create' },
-    loadChildren: () =>
-      import('./edit/edit.module').then((m) => m.EditPageModule),
+    component: EditHabitPage,
   },
 ];
 

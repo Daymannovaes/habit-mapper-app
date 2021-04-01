@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Auth as AwsAuth } from 'aws-amplify';
-// import { AuthClass } from '@aws-amplify/auth/Auth';
+
 @Injectable({
   providedIn: 'root',
 })
-export class AuthenticationService {
+export class UserService {
   constructor() {
-    this.provider = AwsAuth;
+    this.userProvider = AwsAuth;
   }
 
   // private provider: AuthClass;
-  private provider;
+  private userProvider;
 
   async getUserSession() {
     try {
-      return await this.provider.currentSession();
+      return await this.userProvider.currentSession();
     } catch (_) {
       return undefined;
     }
