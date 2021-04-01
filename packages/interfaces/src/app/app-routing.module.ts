@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from './services/authentication/auth.guard';
-import { NoAuthGuard } from './services/authentication/no-auth.guard';
+import { AuthGuard } from './domain-modules/authentication/auth.guard';
+import { NoAuthGuard } from './domain-modules/authentication/no-auth.guard';
 import { NewSessionPage } from './pages/user/new-session.page';
 
 const routes: Routes = [
