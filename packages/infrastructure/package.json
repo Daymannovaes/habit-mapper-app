@@ -14,9 +14,10 @@
     "url": "git+https://github.com/Daymannovaes/habit-mapper-app.git"
   },
   "scripts": {
+    "postinstall": "yarn build",
     "amplify:pull": "amplify pull && yarn build",
     "amplify:push": "amplify push",
-    "build": "yarn build:database:config && yarn build:aws:config",
+    "build": "echo '\n\tBUILDING INFRASTRUCTURE PACKAGE\n\n' && yarn build:database:config && yarn build:aws:config",
     "build:database:config": "bash ./tasks/build-database-config.sh",
     "build:aws:config": "bash ./tasks/build-aws-config.sh",
     "database:start:dev": "ENV=development bash ./database/scripts/start-db.sh"

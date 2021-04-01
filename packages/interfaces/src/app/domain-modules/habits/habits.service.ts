@@ -13,18 +13,18 @@ export class HabitsService {
   }
 
   findAll() {
-    return this.http.get<Habit[]>(`api/habits`).toPromise();
+    return this.http.get<Habit[]>(`/api/habits`).toPromise();
   }
 
   findOne(id: string) {
-    return this.http.get<Habit>(`api/habits/${id}`).toPromise();
+    return this.http.get<Habit>(`/api/habits/${id}`).toPromise();
   }
 
   update(id: number, habit: Habit) {
-    return this.http.patch<Habit>(`api/habits/${id}`, Habit).toPromise();
+    return this.http.patch<Habit>(`/api/habits/${id}`, Habit).toPromise();
   }
 
   remove(id: string) {
-    return this.http.delete<boolean>(`api/habits/${id}`).toPromise();
+    return this.http.delete<boolean>(`/api/habits/${id}`).toPromise();
   }
 }

@@ -4,6 +4,8 @@
 
 export const environment = {
   production: false,
+  apiProxyPrefix: '/api',
+  apiFullUrl: '/proxy-api',
 };
 
 /*
