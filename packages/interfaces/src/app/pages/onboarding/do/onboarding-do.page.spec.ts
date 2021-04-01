@@ -1,20 +1,21 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { DoPage } from './do.page';
+import { OnboardingDoPage } from './onboarding-do.page';
 
-describe('DoPage', () => {
-  let component: DoPage;
-  let fixture: ComponentFixture<DoPage>;
+describe('OnboardingDoPage', () => {
+  let component: OnboardingDoPage;
+  let fixture: ComponentFixture<OnboardingDoPage>;
 
   beforeEach(
     waitForAsync(() => {
       TestBed.configureTestingModule({
-        declarations: [DoPage],
-        imports: [IonicModule.forRoot()],
+        declarations: [OnboardingDoPage],
+        imports: [RouterTestingModule, IonicModule.forRoot()],
       }).compileComponents();
 
-      fixture = TestBed.createComponent(DoPage);
+      fixture = TestBed.createComponent(OnboardingDoPage);
       component = fixture.componentInstance;
       fixture.detectChanges();
     })

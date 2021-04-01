@@ -1,9 +1,11 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { EditHabitPage } from './edit-habit.page';
 
-describe('EditPage', () => {
+describe('EditHabitPage', () => {
   let component: EditHabitPage;
   let fixture: ComponentFixture<EditHabitPage>;
 
@@ -11,7 +13,11 @@ describe('EditPage', () => {
     waitForAsync(() => {
       TestBed.configureTestingModule({
         declarations: [EditHabitPage],
-        imports: [IonicModule.forRoot()],
+        imports: [
+          RouterTestingModule,
+          HttpClientTestingModule,
+          IonicModule.forRoot(),
+        ],
       }).compileComponents();
 
       fixture = TestBed.createComponent(EditHabitPage);
