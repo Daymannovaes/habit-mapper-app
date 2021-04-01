@@ -4,9 +4,14 @@ import { getOrmConfig } from '@habit-mapper-app/infrastructure/database/configur
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthenticationModule } from './authentication/authentication.module';
+import { HabitsModule } from './habits/habits.module';
 
 @Module({
-  imports: [AuthenticationModule, TypeOrmModule.forRoot(getOrmConfig())],
+  imports: [
+    HabitsModule,
+    AuthenticationModule,
+    TypeOrmModule.forRoot(getOrmConfig()),
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
