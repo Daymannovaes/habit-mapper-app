@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { IonicModule } from '@ionic/angular';
 
 import { NewSessionPage } from './new-session.page';
@@ -11,7 +12,7 @@ describe('NewSessionPage', () => {
     waitForAsync(() => {
       TestBed.configureTestingModule({
         declarations: [NewSessionPage],
-        imports: [IonicModule.forRoot()],
+        imports: [RouterTestingModule, IonicModule.forRoot()],
       }).compileComponents();
 
       fixture = TestBed.createComponent(NewSessionPage);
