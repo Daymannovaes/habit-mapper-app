@@ -8,6 +8,8 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AmplifyUIAngularModule } from '@aws-amplify/ui-angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { UserService } from './domain-modules/user/user.service';
+import { HabitsService } from './domain-modules/habits/habits.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +21,11 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule,
     AmplifyUIAngularModule,
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    UserService,
+    HabitsService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

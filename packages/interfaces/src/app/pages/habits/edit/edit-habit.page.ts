@@ -3,9 +3,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Habit } from '@habit-mapper-app/entities';
-import { HabitsService } from '../../../services/habits/habits.service';
+import { HabitsService } from '../../../domain-modules/habits/habits.service';
 @Component({
-  selector: 'app-edit',
+  selector: 'app-edit-habit',
   templateUrl: './edit-habit.page.html',
   styleUrls: ['./edit-habit.page.scss'],
 })
