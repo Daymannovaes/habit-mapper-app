@@ -33,6 +33,7 @@ module.exports = {
         'tsx': 'never'
       }
    ],
+   'class-methods-use-this': 0,
    'no-useless-constructor': 0,
    'import/prefer-default-export': 0,
    '@typescript-eslint/no-empty-function': 0,

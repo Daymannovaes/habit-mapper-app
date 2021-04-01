@@ -1,21 +1,19 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { AuthenticatedGuard } from './authentication/authenticated.guard';
-import { UnauthenticatedGuard } from './authentication/unauthenticated.guard';
+import { AuthGuard } from './services/authentication/auth.guard';
+import { NoAuthGuard } from './services/authentication/no-auth.guard';
+import { NewSessionPage } from './pages/user/new-session.page';
 
 const routes: Routes = [
   {
     path: 'sessions',
-    canActivate: [UnauthenticatedGuard],
-    loadChildren: () =>
-      import('./user-session/user-session.module').then(
-        (m) => m.UserSessionPageModule
-      ),
+    canActivate: [NoAuthGuard],
+    component: NewSessionPage,
   },
   {
     path: 'onboarding',
     loadChildren: () =>
-      import('./onboarding/onboarding.module').then(
+      import('./pages/onboarding/onboarding.module').then(
         (m) => m.OnboardingPageModule
       ),
   },
@@ -26,9 +24,9 @@ const routes: Routes = [
   },
   {
     path: 'habits',
-    canActivate: [AuthenticatedGuard],
+    canActivate: [AuthGuard],
     loadChildren: () =>
-      import('./habits/habits.module').then((m) => m.HabitsPageModule),
+      import('./pages/habits/habits.module').then((m) => m.HabitsPageModule),
   },
 ];
 

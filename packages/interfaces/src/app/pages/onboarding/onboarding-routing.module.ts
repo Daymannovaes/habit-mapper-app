@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { OnboardingDoPage } from './do/onboarding-do.page';
+import { OnboardingLearnPage } from './learn/onboarding-learn.page';
 
 import { OnboardingPage } from './onboarding.page';
 
@@ -10,12 +12,11 @@ const routes: Routes = [
   },
   {
     path: 'learn',
-    loadChildren: () =>
-      import('./learn/learn.module').then((m) => m.LearnPageModule),
+    component: OnboardingLearnPage,
   },
   {
     path: 'do',
-    loadChildren: () => import('./do/do.module').then((m) => m.DoPageModule),
+    component: OnboardingDoPage,
   },
 ];
 

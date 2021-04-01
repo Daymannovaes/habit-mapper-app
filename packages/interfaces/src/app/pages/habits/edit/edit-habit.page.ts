@@ -3,13 +3,13 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Habit } from '@habit-mapper-app/entities';
-import { HabitsService } from '../habits.service';
+import { HabitsService } from '../../../services/habits/habits.service';
 @Component({
   selector: 'app-edit',
-  templateUrl: './edit.page.html',
-  styleUrls: ['./edit.page.scss'],
+  templateUrl: './edit-habit.page.html',
+  styleUrls: ['./edit-habit.page.scss'],
 })
-export class EditPage implements OnInit {
+export class EditHabitPage implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
