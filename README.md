@@ -35,7 +35,7 @@ Simple application to map habits based in [Judson Brewer's research](https://drj
 - [x]  Ionic
 - [x]  Angular
 - [x]  NestJS
-- [ ]  Postgres
+- [x]  Postgres
 - [ ]  Docker
 - [ ]  AWS
 
@@ -60,13 +60,13 @@ Simple application to map habits based in [Judson Brewer's research](https://drj
 - /onboarding/do
 - /login
 - /habits
-- /habits/new
+- /habits/create
 - /habits/:id
 - /habits/:id/edit
 
 ## App Skeleton Steps
 
-- [ ]  Navigation
-- [ ]  Business rules implementation (without persistence, raw HTML, without CSS)
-- [ ]  Business rules with persistence
+- [x]  Navigation
+- [x]  Business rules implementation (without persistence, raw HTML, without CSS)
+- [x]  Business rules with persistence
 - [ ]  Design & UX implementation
