@@ -21,8 +21,8 @@ export function getOrmConfig(environment: Enviroment = Enviroment.development) {
     database: process.env.DATABASE_NAME as string,
     entities: [
       "dist/**/*.entity{.ts,.js}",
-      // "path to entitites package",
+      "node_modules/@habit-mapper-app/entities/**/*.entity{.ts,.js}", // @todo check to see it's correct
     ],
-    synchronize: true
+    synchronize: environment === 'development' ? true : false
   }
 };

@@ -8,6 +8,7 @@ import {
   Delete,
   UseGuards,
 } from '@nestjs/common';
+import { User } from '../user/user.decorator';
 import { JwtAuthGuard } from '../authentication/jwt-auth.guard';
 import { HabitsService } from './habits.service';
 import { CreateHabitDto } from './dto/create-habit.dto';
@@ -19,13 +20,16 @@ export class HabitsController {
   constructor(private readonly habitsService: HabitsService) {}
 
   @Post()
-  create(@Body() createHabitDto: CreateHabitDto) {
-    return this.habitsService.create(createHabitDto);
+  create(@User() user, @Body() createHabitDto: CreateHabitDto) {
+    return this.habitsService.create({
+      ...createHabitDto,
+      userId: user.userId,
+    });
   }
 
   @Get()
-  findAll() {
-    return this.habitsService.findAll();
+  findAll(@User() user) {
+    return this.habitsService.findAll(user.userId);
   }
 
   @Get(':id')
