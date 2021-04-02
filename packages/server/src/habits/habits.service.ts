@@ -5,6 +5,21 @@ import { CreateHabitDto } from './dto/create-habit.dto';
 import { UpdateHabitDto } from './dto/update-habit.dto';
 import { Habit } from './entities/habit.entity';
 
+// @todo move to another service
+function generateUpdateQueryFromDto<T>(dto: T, fields: Array<keyof T>): T {
+  const entries = Object.entries(dto);
+  const updateQuery = entries.reduce((update, [key, value]) => {
+    return fields.includes(key as keyof T)
+      ? {
+          ...update,
+          [key]: value,
+        }
+      : update;
+  }, {});
+
+  return updateQuery as T;
+}
+
 @Injectable()
 export class HabitsService {
   constructor(
@@ -24,21 +39,44 @@ export class HabitsService {
     return this.habitRepository.save(habit);
   }
 
-  findAll(userId): Promise<Habit[]> {
+  findAllForUser(userId: string): Promise<Habit[]> {
     return this.habitRepository.find({
       userId,
     });
   }
 
-  findOne(id: string) {
-    return `This action returns a #${id} habit`;
+  findOneForUser(id: number, userId: string): Promise<Habit | void> {
+    return this.habitRepository.findOne({
+      id,
+      userId,
+    });
   }
 
-  update(id: string, updateHabitDto: UpdateHabitDto) {
-    return `This action updates a #${id} habit`;
+  updateOneForUser(
+    id: number,
+    userId: string,
+    updateHabitDto: UpdateHabitDto,
+  ): Promise<any> {
+    const fields: (keyof UpdateHabitDto)[] = ['trigger', 'behavior', 'reward'];
+
+    const updateQuery = generateUpdateQueryFromDto<UpdateHabitDto>(
+      updateHabitDto,
+      fields,
+    );
+
+    return this.habitRepository.update(
+      {
+        id,
+        userId,
+      },
+      updateQuery,
+    );
   }
 
-  remove(id: string) {
-    return `This action removes a #${id} habit`;
+  removeOneForUser(id: number, userId: string): Promise<any> {
+    return this.habitRepository.delete({
+      id,
+      userId,
+    });
   }
 }
