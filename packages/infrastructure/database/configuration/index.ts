@@ -19,7 +19,10 @@ export function getOrmConfig(environment: Enviroment = Enviroment.development) {
     username: process.env.DATABASE_USERNAME as string,
     password: process.env.DATABASE_PASSWORD as string,
     database: process.env.DATABASE_NAME as string,
-    entities: ["dist/**/*.entity{.ts,.js}"],
+    entities: [
+      "dist/**/*.entity{.ts,.js}",
+      // "path to entitites package",
+    ],
     synchronize: true
   }
 };
