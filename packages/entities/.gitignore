@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+
+# Dependencies
+**/node_modules
+
+# Local binaries temporary files
+.yarn
+*.log
+
+# Vim
+*.swp
+
+# IDE - VSCode
+.history
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+dist/

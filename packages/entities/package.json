@@ -5,13 +5,14 @@
   "author": "Dayman Novaes <daymannovaes@gmail.com>",
   "homepage": "https://github.com/Daymannovaes/habit-mapper-app#readme",
   "license": "ISC",
-  "main": "source/index.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Daymannovaes/habit-mapper-app.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "postinstall": "yarn build",
+    "build": "echo '\n\tBUILDING ENTITIES PACKAGE\n\n' && bash tasks/build-entities.sh"
   },
   "bugs": {
     "url": "https://github.com/Daymannovaes/habit-mapper-app/issues"
