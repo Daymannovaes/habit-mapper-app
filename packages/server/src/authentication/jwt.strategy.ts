@@ -7,7 +7,7 @@ import { AmplifyService } from './amplify.service';
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
   // @todo think a better way to decouple this service from amplifyService
-  constructor(private amplifyService: AmplifyService) {
+  constructor(amplifyService: AmplifyService) {
     super({
       secretOrKeyProvider: passportJwtSecret({
         cache: true,
