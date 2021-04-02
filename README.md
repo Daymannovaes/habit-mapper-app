@@ -1,6 +1,28 @@
 # habit-mapper-app
 Simple application to map habits based in [Judson Brewer's research](https://drjud.com/wp-content/uploads/2021/03/Unwinding-Anxiety-Habit-Mapper-from-DrJud-1-1.pdf).
 
+## Run
+```
+npx lerna bootstrap
+
+# setup database
+cd packages/infrastructure
+yarn database:start:dev
+yarn database:migrate:create
+yarn database:migrate up
+
+# setup aws amplify (for authentication flow)
+yarn amplify:pull # choose aws as src dir
+
+cd ../
+# start frontend
+yarn start:dev:client
+
+# start api (in another terminal)
+yarn start:dev:server
+```
+
+
 ## User Stories
 
 - As an **User**, I want to understand my habits, so I can change them for a better one
