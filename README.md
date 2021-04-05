@@ -3,6 +3,10 @@ Simple application to map habits based in [Judson Brewer's research](https://drj
 
 You can check it in the url https://knowyourhabit.com
 
+<p align="center">
+  <img src="https://github.com/Daymannovaes/habit-mapper-app/blob/main/packages/interfaces/resources/icon.png" alt="Know Your Habit icon" width="240">
+</p>
+
 ## Run
 ```
 npx lerna bootstrap
@@ -98,4 +102,4 @@ yarn start:dev:server
 - [x]  Navigation
 - [x]  Business rules implementation (without persistence, raw HTML, without CSS)
 - [x]  Business rules with persistence
-- [ ]  Design & UX implementation
+- [x]  Design & UX implementation
