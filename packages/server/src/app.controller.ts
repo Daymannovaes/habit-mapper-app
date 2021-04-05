@@ -16,8 +16,8 @@ export class AppController {
     return user;
   }
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Get('/ping')
+  ping(): string {
+    return this.appService.ping();
   }
 }
