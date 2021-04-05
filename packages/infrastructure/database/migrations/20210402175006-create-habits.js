@@ -22,11 +22,35 @@ exports.up = function (db, callback) {
       notNull: true,
       autoIncrement: true
     },
-    trigger: 'string',
-    behavior: 'string',
-    reward: 'string',
+    trigger: {
+      type: 'string',
+      notNull: true,
+    },
+    behavior: {
+      type: 'string',
+      notNull: true,
+    },
+    reward: {
+      type: 'string',
+      notNull: true,
+    },
 
-    userId: 'string'
+    user_id: {
+      type: 'string',
+      notNull: true,
+    },
+
+    created_at: {
+      type: 'timestamp',
+      notNull: true,
+      defaultValue: new String('now()'),
+    },
+
+    updated_at: {
+      type: 'timestamp',
+      notNull: true,
+      defaultValue: new String('now()'),
+    },
   }, callback);
 };
 
