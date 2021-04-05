@@ -28,6 +28,7 @@ export class EditHabitPage implements OnInit {
     this.fillForm();
 
     this.route.data.subscribe(async (data) => {
+      this.habitId = '';
       if (data.type === 'edit') {
         this.habitId = this.route.snapshot.paramMap.get('id');
         const habit = await this.habitService.findOne(this.habitId);
@@ -52,10 +53,16 @@ export class EditHabitPage implements OnInit {
 
   async onFormSubmit(): Promise<void> {
     if (this.form.valid) {
-      const habit: Habit = await this.habitService.create(this.form.value);
+      await this.createOrUpdateHabit(this.form.value);
       this.form.reset();
 
-      await this.router.navigate(['/habits'], { state: { newHabit: habit } });
+      await this.router.navigate(['/habits'], { state: { newHabit: true } });
     }
+  }
+
+  private async createOrUpdateHabit(habit) {
+    return this.habitId
+      ? this.habitService.update(this.habitId, habit)
+      : this.habitService.create(habit);
   }
 }

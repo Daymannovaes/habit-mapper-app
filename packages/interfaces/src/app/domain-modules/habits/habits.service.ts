@@ -20,8 +20,8 @@ export class HabitsService {
     return this.http.get<Habit>(`/api/habits/${id}`).toPromise();
   }
 
-  update(id: number, habit: Habit) {
-    return this.http.patch<Habit>(`/api/habits/${id}`, Habit).toPromise();
+  update(id: string, habit: Habit) {
+    return this.http.patch<Habit>(`/api/habits/${id}`, habit).toPromise();
   }
 
   remove(id: string) {
