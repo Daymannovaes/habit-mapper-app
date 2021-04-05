@@ -8,5 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class OnboardingDoPage implements OnInit {
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    localStorage.setItem('habit-mapper-app-user-onboarded', 'true');
+  }
 }
