@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Habit } from '@habit-mapper-app/entities';
+import { filter } from 'rxjs/operators';
 import { HabitsService } from '../../domain-modules/habits/habits.service';
 
 @Component({
@@ -13,17 +14,33 @@ export class HabitsPage implements OnInit {
 
   habits: Habit[] = [];
 
+  filteredHabits: Habit[] = [];
+
   async ngOnInit() {
-    this.habits = await this.habitService.findAll();
-    this.router.events.subscribe(async (val) => {
-      // @todo use observable filters
-      if (val instanceof NavigationEnd) {
+    await this.fetchHabits();
+
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe(async () => {
         const { state } = this.router.getCurrentNavigation().extras;
 
         if (state && state.newHabit) {
-          this.habits = await this.habitService.findAll();
+          await this.fetchHabits();
         }
-      }
-    });
+      });
+  }
+
+  async fetchHabits(): Promise<void> {
+    this.habits = await this.habitService.findAll();
+    this.filteredHabits = this.habits;
+  }
+
+  filterHabit(search: string): void {
+    this.filteredHabits = this.habits.filter(
+      (habit) =>
+        habit.trigger.match(search) ||
+        habit.behavior.match(search) ||
+        habit.reward.match(search)
+    );
   }
 }
