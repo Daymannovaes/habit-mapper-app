@@ -58,8 +58,13 @@ yarn start:dev:server
 - [x]  Angular
 - [x]  NestJS
 - [x]  Postgres
-- [ ]  Docker
-- [ ]  AWS
+- [x]  Docker
+- [x]  AWS
+  - ECS for dockerized server (service atacched with an app load balancer)
+  - App Load Balancer, targeted to EC2 instances deployed by ECS
+  - AWS Amplify pipeline to build and host frontend
+  - Route 53 knowyourhabit.com -> Amplify, api.knowyourhabit.com -> Load Balancer
+  - RDS for postgres
 
 ## Layout
 

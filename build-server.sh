@@ -23,6 +23,6 @@ cp package.json dist/
 
 
 printf "\n\n\tCALLING DOCKER BUILD...\n\n"
-docker build . -t habit-mapper-app/server
+docker build . -t habit-mapper-server
 
 printf "\n\n\tDONE...\n\n"
