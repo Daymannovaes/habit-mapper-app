@@ -16,9 +16,10 @@ import { HabitsService } from './domain-modules/habits/habits.service';
 import { AuthInterceptor } from './domain-modules/authentication/auth.interceptor';
 import { ApiInterceptorFactory } from './domain-modules/api/api.interceptor';
 import { NewSessionPage } from './pages/user/new-session.page';
+import { TabsComponent } from './components/tabs/tabs.component';
 
 @NgModule({
-  declarations: [AppComponent, NewSessionPage],
+  declarations: [AppComponent, NewSessionPage, TabsComponent],
   entryComponents: [],
   imports: [
     BrowserModule,

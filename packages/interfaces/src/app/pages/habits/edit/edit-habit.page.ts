@@ -41,6 +41,7 @@ export class EditHabitPage implements OnInit {
   async onFormSubmit() {
     if (this.form.valid) {
       const habit: Habit = await this.habitService.create(this.form.value);
+      this.form.reset();
 
       await this.router.navigate(['/habits'], { state: { newHabit: habit } });
     }
