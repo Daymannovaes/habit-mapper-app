@@ -19,5 +19,8 @@
   },
   "dependencies": {
     "@habit-mapper-app/infrastructure": "^0.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.3"
   }
 }

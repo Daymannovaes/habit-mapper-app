@@ -12,7 +12,7 @@ cp ${CONFIG_DIR}/aws-exports.js ${DIST_DIR}/index.ts
 
 # build modules
 echo "building typescript modules..."
-tsc -d ${DIST_DIR}/index.ts
+npx tsc -d ${DIST_DIR}/index.ts
 
 # configure package.json to point to the dist folder
 echo "configuring ${CONFIG_DIR}/package.json to point to ${DIST_DIR}"
