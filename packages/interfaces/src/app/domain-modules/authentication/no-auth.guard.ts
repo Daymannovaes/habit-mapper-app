@@ -19,7 +19,7 @@ export class NoAuthGuard implements CanActivate {
     state: RouterStateSnapshot
   ): Promise<boolean | UrlTree> {
     return (await this.userService.isUserAuthenticated())
-      ? this.router.parseUrl(route.data.redirectTo || '/onboarding')
+      ? this.router.parseUrl(route.data.redirectTo || '')
       : true;
   }
 }
