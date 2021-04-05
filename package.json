@@ -12,8 +12,10 @@
     "start:dev:client": "cd packages/interfaces && yarn start:dev",
     "start:dev:server": "cd packages/server && yarn start:dev",
 
-    "build:server": "bash ./build-server.sh",
-    "deploy:server": "docker tag habit-mapper-server:latest 570876585042.dkr.ecr.us-east-1.amazonaws.com/habit-mapper-server:latest && docker push 570876585042.dkr.ecr.us-east-1.amazonaws.com/habit-mapper-server:latest"
+    "build:server": "bash ./build-server.sh && say \"done\" --voice Luciana",
+    "deploy:server": "docker tag habit-mapper-server:latest 570876585042.dkr.ecr.us-east-1.amazonaws.com/habit-mapper-server:latest && docker push 570876585042.dkr.ecr.us-east-1.amazonaws.com/habit-mapper-server:latest && say \"done\" --voice Luciana",
+
+    "aws:update": "aws ecs update-service --cluster habit-mapper-app-3 --service habit-mapper-ecs-service --force-new-deployment --profile daymannovaes"
   },
   "devDependencies": {
     "lerna": "^4.0.0"
