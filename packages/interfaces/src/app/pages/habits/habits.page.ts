@@ -50,7 +50,8 @@ export class HabitsPage implements OnInit {
     }
   }
 
-  filterHabit(search: string): void {
+  filterHabit(event): void {
+    const search = event.target.value;
     this.filteredHabits = this.habits.filter(
       (habit) =>
         habit.trigger.match(search) ||
