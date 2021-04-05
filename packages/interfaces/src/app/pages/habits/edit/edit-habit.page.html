@@ -7,22 +7,29 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <form [formGroup]="form" (ngSubmit)="onFormSubmit()">
-    <ion-item>
+<ion-content class="ion-padding" fullscreen="true">
+  <h4>
+    <ion-label>Describe your habit below</ion-label>
+  </h4>
+  <form [formGroup]="form" (ngSubmit)="onFormSubmit()" class="ion-margin-top" style="--ion-margin: 32px;">
+    <ion-item class="ion-no-padding">
       <ion-label>Trigger</ion-label>
       <ion-input type="text" formControlName="trigger"></ion-input>
     </ion-item>
-    <ion-item>
+    <ion-item class="ion-no-padding">
       <ion-label>Behavior</ion-label>
       <ion-input type="text" formControlName="behavior"></ion-input>
     </ion-item>
-    <ion-item>
+    <ion-item class="ion-no-padding">
       <ion-label>Reward</ion-label>
       <ion-input type="text" formControlName="reward"></ion-input>
     </ion-item>
 
-    <ion-button class="ion-margin-top" expand="block" type="submit" [disabled]="form.invalid">
+    <p class="ion-margin-top" style="--ion-margin: 48px;">
+      Need help?
+      <a routerLink="/onboarding/learn" routerDirection="back">Learn how to map a habit</a>
+    </p>
+    <ion-button expand="block" type="submit" [disabled]="form.invalid">
       Map the habit!
     </ion-button>
   </form>
