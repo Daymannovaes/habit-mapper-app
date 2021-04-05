@@ -12,7 +12,7 @@ mkdir -p ${DIST_DIR}
 
 # build modules
 echo "building typescript modules..."
-tsc -d ${CONFIG_DIR}/index.ts --outDir ${DIST_DIR}
+npx tsc -d ${CONFIG_DIR}/index.ts --outDir ${DIST_DIR}
 
 # configure package.json to point to the dist folder
 # echo "configuring ${CONFIG_DIR}/package.json to point to ${DIST_DIR}"
