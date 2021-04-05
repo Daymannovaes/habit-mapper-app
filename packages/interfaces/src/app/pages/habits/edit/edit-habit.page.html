@@ -30,7 +30,7 @@
       <a routerLink="/onboarding/learn" routerDirection="back">Learn how to map a habit</a>
     </p>
     <ion-button expand="block" type="submit" [disabled]="form.invalid">
-      Map the habit!
+      {{ habitId ? 'Edit the habit' : 'Map the habit' }}
     </ion-button>
   </form>
 </ion-content>

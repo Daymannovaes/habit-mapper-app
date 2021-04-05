@@ -24,21 +24,33 @@ export class EditHabitPage implements OnInit {
 
   form: FormGroup;
 
-  ngOnInit() {
-    this.form = new FormGroup({
-      trigger: new FormControl('', Validators.required),
-      behavior: new FormControl('', Validators.required),
-      reward: new FormControl('', Validators.required),
-    });
+  async ngOnInit(): Promise<void> {
+    this.fillForm();
 
-    this.route.data.subscribe((data) => {
+    this.route.data.subscribe(async (data) => {
       if (data.type === 'edit') {
         this.habitId = this.route.snapshot.paramMap.get('id');
+        const habit = await this.habitService.findOne(this.habitId);
+        this.fillForm(habit);
       }
     });
   }
 
-  async onFormSubmit() {
+  fillForm(
+    habit: Partial<Habit> = {
+      trigger: '',
+      behavior: '',
+      reward: '',
+    }
+  ): void {
+    this.form = new FormGroup({
+      trigger: new FormControl(habit.trigger || '', Validators.required),
+      behavior: new FormControl(habit.behavior || '', Validators.required),
+      reward: new FormControl(habit.reward || '', Validators.required),
+    });
+  }
+
+  async onFormSubmit(): Promise<void> {
     if (this.form.valid) {
       const habit: Habit = await this.habitService.create(this.form.value);
       this.form.reset();
