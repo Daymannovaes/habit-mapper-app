@@ -51,12 +51,12 @@ export class HabitsPage implements OnInit {
   }
 
   filterHabit(event): void {
-    const search = event.target.value;
+    const search = event.target.value.toLowerCase();
     this.filteredHabits = this.habits.filter(
       (habit) =>
-        habit.trigger.match(search) ||
-        habit.behavior.match(search) ||
-        habit.reward.match(search)
+        habit.trigger.toLowerCase().match(search) ||
+        habit.behavior.toLowerCase().match(search) ||
+        habit.reward.toLowerCase().match(search)
     );
   }
 }
