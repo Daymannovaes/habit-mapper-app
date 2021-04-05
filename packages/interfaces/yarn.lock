@@ -3574,7 +3574,7 @@ alphanum-sort@^1.0.0:
   resolved "https://registry.yarnpkg.com/alphanum-sort/-/alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3"
   integrity sha1-l6ERlkmyEa0zaR2fn0hqjsn74KM=
 
-amazon-cognito-identity-js@4.6.0:
+amazon-cognito-identity-js@4.6.0, amazon-cognito-identity-js@^4.6.0:
   version "4.6.0"
   resolved "https://registry.yarnpkg.com/amazon-cognito-identity-js/-/amazon-cognito-identity-js-4.6.0.tgz#311fe17b8a3ff65f119bca1cbdef7036e147076f"
   integrity sha512-D62rs0mcfA4APccAAsliWh1beOU7MBu/xj21W0kSOsjdc9diujgLHwHiHN6z91HSmJvztf69PUq4w4KuVKEjCA==
