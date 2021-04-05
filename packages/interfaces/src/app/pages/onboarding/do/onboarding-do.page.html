@@ -1,9 +1,18 @@
-<ion-header>
+<ion-header translucent="true">
   <ion-toolbar>
-    <ion-title>do</ion-title>
+    <ion-title>Learning</ion-title>
+
+    <ion-buttons slot="secondary">
+      <ion-back-button defaultHref="onboarding" text="Back"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-<a routerLink="/habits/create">Go to new habit page</a>
+<ion-content fullscreen="true" class="ion-padding">
+  <h6>
+    Now you can map your first habit!
+  </h6>
+  <p>
+    <a routerLink="/habits/create">Map my first habit</a>
+  </p>
 </ion-content>

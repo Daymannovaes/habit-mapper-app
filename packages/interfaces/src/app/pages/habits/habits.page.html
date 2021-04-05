@@ -1,10 +1,10 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>habits</ion-title>
+    <ion-title>Habits</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
   <div *ngFor="let habit of habits">
     <p>Trigger: {{ habit.trigger }}</p>
     <p>Behavior: {{ habit.behavior }}</p>
@@ -13,5 +13,9 @@
     <br />
   </div>
 
-  <a routerLink="create">Create a new habit</a>
+  <a routerLink="create">
+    <ion-button class="ion-margin-top" expand="block">
+      Map a new habit
+    </ion-button>
+  </a>
 </ion-content>
