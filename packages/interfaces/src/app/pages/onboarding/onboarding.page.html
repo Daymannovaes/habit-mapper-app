@@ -5,11 +5,38 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <p>Do you know about habit science?</p>
-  <p>
-    <a routerLink="learn">No</a>
-  </p>
-  <p>
-    <a routerLink="do">Yes</a>
-  </p>
+  <ion-grid class="onboarding">
+    <div class="onboarding-title">
+      <h2>
+        Change your bad habits!
+      </h2>
+      <br />
+      <p>
+        The <strong>Know Your Habit</strong> is a simple tool that will help you understand your habits, so you can work
+        with
+        it to change your behavior and break bad habits.
+      </p>
+
+    </div>
+    <div class="onboarding-actions">
+      <p>
+        But to <strong>change your habits</strong> you need to <strong>understand how they work</strong>.
+      </p>
+      <p>Do you know how habits works?</p>
+      <p style="margin-top: 32px;">
+        <a routerLink="learn">
+          <ion-button expand="block">
+            No, I want to learn
+          </ion-button>
+        </a>
+      </p>
+      <p>
+        <a routerLink="do">
+          <ion-button expand="block">
+            Yes, I do!
+          </ion-button>
+        </a>
+      </p>
+    </div>
+  </ion-grid>
 </ion-content>

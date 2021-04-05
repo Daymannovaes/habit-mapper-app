@@ -16,6 +16,10 @@ export class HabitsPage implements OnInit {
 
   filteredHabits: Habit[] = [];
 
+  fetchingHabits = true;
+
+  userMessage = '';
+
   async ngOnInit() {
     await this.fetchHabits();
 
@@ -31,8 +35,19 @@ export class HabitsPage implements OnInit {
   }
 
   async fetchHabits(): Promise<void> {
-    this.habits = await this.habitService.findAll();
-    this.filteredHabits = this.habits;
+    try {
+      this.fetchingHabits = true;
+      this.userMessage = 'Loading your habits...';
+
+      this.habits = await this.habitService.findAll();
+      this.filteredHabits = this.habits;
+
+      this.fetchingHabits = false;
+      this.userMessage = '';
+    } catch (error) {
+      this.userMessage = error.message || 'Oops! Something went wrong';
+      this.fetchingHabits = false;
+    }
   }
 
   filterHabit(search: string): void {

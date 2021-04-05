@@ -8,8 +8,14 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-list>
-    <ion-item *ngFor="let habit of filteredHabits" [routerLink]="habit.id + '/edit'" detail="false" button="true">
+  <h4 *ngIf="fetchingHabits || userMessage">
+    <ion-label>
+      {{ userMessage }}
+    </ion-label>
+  </h4>
+  <ion-list *ngIf="!fetchingHabits">
+    <ion-item *ngFor="let habit of filteredHabits" [routerLink]="habit.id + '/edit'" detail="false" button="true"
+      class="ion-no-padding">
       <ion-label>
         <h2>Trigger: {{ habit.trigger }}</h2>
         <p>Behavior: {{ habit.behavior }}</p>
