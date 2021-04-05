@@ -1,11 +1,13 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>{{ habitId ? 'Edit a habit mapping' : 'Map a new habit' }}</ion-title>
+    <ion-title>{{ habitId ? 'Edit a habit' : 'Map a new habit' }}</ion-title>
+    <ion-buttons>
+      <ion-back-button defaultHref="/habits" icon="close" text=""></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div *ngIf="habitId">id: {{ habitId }}</div>
+<ion-content class="ion-padding">
   <form [formGroup]="form" (ngSubmit)="onFormSubmit()">
     <ion-item>
       <ion-label>Trigger</ion-label>
@@ -20,6 +22,8 @@
       <ion-input type="text" formControlName="reward"></ion-input>
     </ion-item>
 
-    <ion-button expand="block" type="submit" [disabled]="form.invalid">Map my habit!</ion-button>
+    <ion-button class="ion-margin-top" expand="block" type="submit" [disabled]="form.invalid">
+      Map the habit!
+    </ion-button>
   </form>
 </ion-content>
