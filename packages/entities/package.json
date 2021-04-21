@@ -1,6 +1,6 @@
 {
   "name": "@habit-mapper-app/entities",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "> TODO: description",
   "author": "Dayman Novaes <daymannovaes@gmail.com>",
   "homepage": "https://github.com/Daymannovaes/habit-mapper-app#readme",
@@ -18,7 +18,7 @@
     "url": "https://github.com/Daymannovaes/habit-mapper-app/issues"
   },
   "dependencies": {
-    "@habit-mapper-app/infrastructure": "^0.1.0"
+    "@habit-mapper-app/infrastructure": "^0.1.1"
   },
   "devDependencies": {
     "typescript": "^4.2.3"
