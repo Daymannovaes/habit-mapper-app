@@ -7,12 +7,10 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
-    "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "start": "nest start",
-    "start:dev": "nest start --watch",
-    "start:debug": "nest start --debug --watch",
-    "start:prod": "NODE_ENV=production node dist/api/src/main.js",
-    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+    "start": "env-cmd --file ../.env nest start",
+    "start:dev": "env-cmd --file ../.env nest start --watch",
+    "start:debug": "env-cmd --file ../.env nest start --debug --watch",
+    "start:prod": "NODE_ENV=production node dist/api/source/main.js",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
@@ -27,6 +25,7 @@
     "@nestjs/passport": "^7.1.5",
     "@nestjs/platform-express": "^7.6.15",
     "@nestjs/typeorm": "^7.1.5",
+    "dotenv": "^8.2.0",
     "jwks-rsa": "^2.0.2",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
@@ -48,6 +47,7 @@
     "@types/supertest": "^2.0.10",
     "@typescript-eslint/eslint-plugin": "^4.19.0",
     "@typescript-eslint/parser": "^4.19.0",
+    "env-cmd": "^10.1.0",
     "eslint": "^7.23.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.1.0",
@@ -68,7 +68,7 @@
       "json",
       "ts"
     ],
-    "rootDir": "src",
+    "rootDir": "source",
     "testRegex": ".*\\.spec\\.ts$",
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
