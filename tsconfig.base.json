@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@habit-mapper-app/entities/*": ["entities/*"],
+      "@habit-mapper-app/infrastructures/aws": ["infrastructure/*"],
+      "@habit-mapper-app/infrastructures/*": ["infrastructure/*"],
+    }
+  }
+}
