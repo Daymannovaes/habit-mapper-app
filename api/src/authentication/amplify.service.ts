@@ -1,6 +1,6 @@
 import { HttpService, Injectable } from '@nestjs/common';
 
-import awsExports from '@habit-mapper-app/infrastructure/aws';
+import awsExports from '@habit-mapper-app/infrastructures/aws';
 
 @Injectable()
 export class AmplifyService {

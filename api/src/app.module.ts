@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { getOrmConfig } from '../../infrastructure/database/configuration';
+import { getOrmConfig } from '@habit-mapper-app/infrastructures/database/configuration';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthenticationModule } from './authentication/authentication.module';
