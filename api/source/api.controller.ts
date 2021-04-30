@@ -1,12 +1,9 @@
 import { Controller, Get, UseGuards } from '@nestjs/common';
-import { AppService } from './app.service';
-import { JwtAuthGuard } from './authentication/jwt-auth.guard';
-import { User } from './user/user.decorator';
+import { JwtAuthGuard } from './modules/authentication/jwt-auth.guard';
+import { User } from './modules/user/user.decorator';
 
 @Controller()
-export class AppController {
-  constructor(private readonly appService: AppService) {}
-
+export class ApiController {
   @Get('/me')
   @UseGuards(JwtAuthGuard)
   getMe(@User() user): string {
@@ -18,6 +15,6 @@ export class AppController {
 
   @Get('/ping')
   ping(): string {
-    return this.appService.ping();
+    return 'pong';
   }
 }

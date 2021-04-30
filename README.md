@@ -9,10 +9,12 @@ You can check it in the url https://knowyourhabit.com
 
 ## Run
 ```
-npx lerna bootstrap
+# install all dependencies
+yarn install
 
 # setup database
-cd packages/infrastructure
+cd infrastructures
+
 yarn database:start:dev
 yarn database:migrate:create
 yarn database:migrate up
