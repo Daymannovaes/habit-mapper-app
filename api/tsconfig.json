@@ -13,6 +13,10 @@
     "baseUrl": "./",
     "incremental": true,
     "moduleResolution": "node",
-    "traceResolution": false
+    "traceResolution": false,
+    "paths": {
+      "@habit-mapper-app/infrastructures/aws": ["../infrastructures/aws/index.ts"],
+      "@habit-mapper-app/entities": ["entities", "../entities"]
+    }
   }
 }

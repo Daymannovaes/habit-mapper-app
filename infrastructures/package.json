@@ -15,6 +15,13 @@
   "scripts": {
     "amplify:pull": "amplify pull && yarn build",
     "amplify:push": "amplify push",
+
+
+    "build": "func() { yarn build:$1; }; func",
+
+    "build:api": "docker build --file api/Dockerfile --tag habit-mapper-api ../",
+    "run:api:prod": "docker run --name habit-mapper-api --publish 5000:5000 --env-file=../.env.production habit-mapper-api",
+
     "database:start:dev": "ENV=development bash ./database/scripts/start-db.sh",
     "database:migrate": "env-cmd --file ../.env db-migrate --config database/configuration.json --env dev --migrations-dir database/migrations",
     "database:migrate:create": "yarn database:migrate db:create habitmapper",
