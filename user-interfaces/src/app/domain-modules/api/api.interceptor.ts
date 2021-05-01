@@ -27,7 +27,7 @@ class ApiInterceptor implements HttpInterceptor {
 
   intercept(
     req: HttpRequest<any>,
-    next: HttpHandler
+    next: HttpHandler,
   ): Observable<HttpEvent<any>> {
     return this.startsWithProxyPrefix(req.url)
       ? next.handle(this.replacePrefixWithApiUrl(req))
@@ -46,7 +46,7 @@ class ApiInterceptor implements HttpInterceptor {
 }
 
 export function ApiInterceptorFactory(
-  apiInterceptorConfig: ApiInterceptorConfig
+  apiInterceptorConfig: ApiInterceptorConfig,
 ): HttpInterceptor {
   return new ApiInterceptor(apiInterceptorConfig);
 }

@@ -25,7 +25,7 @@ export class AuthGuard implements CanActivate {
 
   async canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
+    state: RouterStateSnapshot,
   ): Promise<boolean | UrlTree> {
     return (await this.userService.isUserAuthenticated())
       ? true

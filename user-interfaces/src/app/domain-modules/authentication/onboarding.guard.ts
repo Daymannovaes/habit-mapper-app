@@ -19,7 +19,7 @@ export class OnboardingGuard implements CanActivate {
 
   async canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
+    state: RouterStateSnapshot,
   ): Promise<boolean | UrlTree> {
     return (await this.userOnboarded())
       ? this.router.parseUrl(route.data.redirectTo || '/habits')

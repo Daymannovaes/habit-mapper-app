@@ -17,23 +17,23 @@ export class AuthInterceptor implements HttpInterceptor {
 
   intercept(
     req: HttpRequest<any>,
-    next: HttpHandler
+    next: HttpHandler,
   ): Observable<HttpEvent<any>> {
     return this.interceptWithAuthorizationHeader(req, next);
   }
 
   private interceptWithAuthorizationHeader(
     req: HttpRequest<any>,
-    next: HttpHandler
+    next: HttpHandler,
   ): Observable<HttpEvent<any>> {
     return from(this.userService.getUserToken()).pipe(
-      mergeMap((token) => next.handle(this.addAuthorizationToken(req, token)))
+      mergeMap((token) => next.handle(this.addAuthorizationToken(req, token))),
     );
   }
 
   private addAuthorizationToken(
     req: HttpRequest<any>,
-    token: string
+    token: string,
   ): HttpRequest<any> {
     return req.clone({
       setHeaders: {

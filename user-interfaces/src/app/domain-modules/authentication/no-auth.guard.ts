@@ -16,7 +16,7 @@ export class NoAuthGuard implements CanActivate {
 
   async canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot
+    state: RouterStateSnapshot,
   ): Promise<boolean | UrlTree> {
     return (await this.userService.isUserAuthenticated())
       ? this.router.parseUrl(route.data.redirectTo || '')

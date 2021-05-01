@@ -17,7 +17,7 @@ describe('OnboardingLearnPage', () => {
       fixture = TestBed.createComponent(OnboardingLearnPage);
       component = fixture.componentInstance;
       fixture.detectChanges();
-    })
+    }),
   );
 
   it('should create', () => {
