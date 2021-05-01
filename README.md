@@ -8,11 +8,13 @@ You can check it in the url https://knowyourhabit.com
 </p>
 
 ## Run
-```
-npx lerna bootstrap
+```bash
+# install all dependencies
+yarn install
 
 # setup database
-cd packages/infrastructure
+cd infrastructures
+
 yarn database:start:dev
 yarn database:migrate:create
 yarn database:migrate up
@@ -21,13 +23,18 @@ yarn database:migrate up
 yarn amplify:pull # choose aws as src dir
 
 cd ../
-# start frontend
-yarn start:dev:client
 
-# start api (in another terminal)
-yarn start:dev:server
+# serve api and frotend in localhost
+yarn start
 ```
 
+## Build
+```bash
+# construct a docker file
+yarn build:api
+#run the dockerized api in port 5000 and env file .env.production
+yarn run:api:prod
+```
 
 ## User Stories
 
