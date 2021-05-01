@@ -1,0 +1,42 @@
+{
+  "name": "@habit-mapper-app/infrastructure",
+  "version": "0.1.1",
+  "description": "> TODO: description",
+  "author": "Dayman Novaes <daymannovaes@gmail.com>",
+  "homepage": "https://github.com/Daymannovaes/habit-mapper-app#readme",
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daymannovaes/habit-mapper-app.git"
+  },
+  "scripts": {
+    "amplify:pull": "amplify pull && yarn build",
+    "amplify:push": "amplify push",
+
+
+    "build": "func() { yarn build:$1; }; func",
+
+    "build:api": "docker build --file api/Dockerfile --tag habit-mapper-api ../",
+    "run:api:prod": "docker run --name habit-mapper-api --publish 5000:5000 --env-file=../.env.production habit-mapper-api",
+
+    "database:start:dev": "ENV=development bash ./database/scripts/start-db.sh",
+    "database:migrate": "env-cmd --file ../.env db-migrate --config database/configuration.json --env dev --migrations-dir database/migrations",
+    "database:migrate:create": "yarn database:migrate db:create habitmapper",
+    "database:migrate:up": "yarn database:migrate up"
+  },
+  "bugs": {
+    "url": "https://github.com/Daymannovaes/habit-mapper-app/issues"
+  },
+  "dependencies": {
+    "@types/node": "^14.14.37",
+    "db-migrate": "^0.11.12",
+    "db-migrate-pg": "^1.2.2"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "typescript": "^4.2.3"
+  }
+}

@@ -13,3 +13,5 @@
 
 # VSCode
 .history
+
+.env.*
