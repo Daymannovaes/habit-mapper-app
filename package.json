@@ -14,7 +14,7 @@
     "start:dev:server": "cd api && yarn start:dev",
     "build:api": "cd infrastructures && yarn build api",
     "run:api:prod": "cd infrastructures && yarn run:api:prod",
-    "deploy:server": "docker tag habit-mapper-api:latest 570876585042.dkr.ecr.us-east-1.amazonaws.com/habit-mapper-api:latest && docker push 570876585042.dkr.ecr.us-east-1.amazonaws.com/habit-mapper-api:latest && say \"done\" --voice Luciana",
+    "deploy:server": "docker tag habit-mapper-api:latest 570876585042.dkr.ecr.us-east-1.amazonaws.com/habit-mapper-server:latest && docker push 570876585042.dkr.ecr.us-east-1.amazonaws.com/habit-mapper-server:latest && say \"done\" --voice Luciana",
     "aws:update": "aws ecs update-service --cluster habit-mapper-app-3 --service habit-mapper-ecs-service --force-new-deployment --profile daymannovaes"
   },
   "devDependencies": {
