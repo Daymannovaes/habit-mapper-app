@@ -31,6 +31,13 @@ module.exports = {
   root: true,
   ignorePatterns: ['.eslintrc.js'],
   rules: {
-    'import/no-extraneous-dependencies': ['error', { devDependencies: ['**/*.test.ts', '**/*.spec.ts'] }]
+    'import/no-extraneous-dependencies': ['error', { devDependencies: ['**/*.test.ts', '**/*.spec.ts'] }],
+
+    // enforce complexity rules
+    'complexity': ['error', 2],
+    'max-params': ['error', 3],
+    'max-statements': ['error', 10],
+    'max-lines-per-function': ['error', 20],
+
   },
 };
