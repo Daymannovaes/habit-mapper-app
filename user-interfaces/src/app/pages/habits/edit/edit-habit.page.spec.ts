@@ -23,7 +23,7 @@ describe('EditHabitPage', () => {
       fixture = TestBed.createComponent(EditHabitPage);
       component = fixture.componentInstance;
       fixture.detectChanges();
-    })
+    }),
   );
 
   it('should create', () => {

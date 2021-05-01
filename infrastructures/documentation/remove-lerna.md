@@ -29,12 +29,16 @@ _What is the change that we're proposing and/or doing?_
 - The env config files was move to the root. To run api in dev environment correctly, the developer needs to source the .env file. This is done automatically in the `npm start`
 - To run the production version of api (docker), the developer needs to pass the --env-file parameter, which is also done automatically in the `npm run run:api:prod`
 
+- moved eslint to the root folder
+
 ## Consequences
 
 _What becomes easier or more difficult to do because of this change?_
 
 - building dockerized API became easier
 - importing shared libraries is now easier. Not build process is required anymore
-   - However, linting is not working properly, although the ts importing are. This is due probably because if inability of lintinh to follow the extends command
+   - [FIXED] However, linting is not working properly, although the ts importing are. This is due probably because if inability of lintinh to follow the extends command
 - Installing packages is slightly more difficult because we don't have `npx lerna boostrap` anymore. I needed to add a `concurrently` to cd & install all packages after install the root
 - It's still hard to distinguish what is an deployable app (in the case, api and user-interfaces) and what is a library shared by all apps (in the case, infrastructures and entities)
+
+- eslint configurations were centralized, but now it's VERY slow to run. Tryed some optimizations, but didn't work.

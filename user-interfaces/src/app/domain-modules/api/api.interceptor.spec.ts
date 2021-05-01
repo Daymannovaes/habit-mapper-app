@@ -54,7 +54,7 @@ describe('AuthInterceptor', () => {
       .subscribe((data) => expect(data).toEqual({}));
 
     const request = httpTestingController.expectOne(
-      'http://localhost:3000/some-url'
+      'http://localhost:3000/some-url',
     );
     request.flush({});
   });
@@ -67,7 +67,7 @@ describe('AuthInterceptor', () => {
       .subscribe((data) => expect(data).toEqual({}));
 
     const request = httpTestingController.expectOne(
-      'http://localhost/some-url'
+      'http://localhost/some-url',
     );
     request.flush({});
   });

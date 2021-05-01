@@ -13,7 +13,7 @@ export class EditHabitPage implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private habitService: HabitsService
+    private habitService: HabitsService,
   ) {
     // this.habit = new Habit(); // no working??
   }
@@ -42,7 +42,7 @@ export class EditHabitPage implements OnInit {
       trigger: '',
       behavior: '',
       reward: '',
-    }
+    },
   ): void {
     this.form = new FormGroup({
       trigger: new FormControl(habit.trigger || '', Validators.required),

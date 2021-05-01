@@ -18,7 +18,7 @@ describe('NewSessionPage', () => {
       fixture = TestBed.createComponent(NewSessionPage);
       component = fixture.componentInstance;
       fixture.detectChanges();
-    })
+    }),
   );
 
   it('should create', () => {

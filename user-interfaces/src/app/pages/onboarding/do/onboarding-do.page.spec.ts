@@ -18,7 +18,7 @@ describe('OnboardingDoPage', () => {
       fixture = TestBed.createComponent(OnboardingDoPage);
       component = fixture.componentInstance;
       fixture.detectChanges();
-    })
+    }),
   );
 
   it('should create', () => {

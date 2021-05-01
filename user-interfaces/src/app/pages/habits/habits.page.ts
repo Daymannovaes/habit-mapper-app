@@ -56,7 +56,7 @@ export class HabitsPage implements OnInit {
       (habit) =>
         habit.trigger.toLowerCase().match(search) ||
         habit.behavior.toLowerCase().match(search) ||
-        habit.reward.toLowerCase().match(search)
+        habit.reward.toLowerCase().match(search),
     );
   }
 }

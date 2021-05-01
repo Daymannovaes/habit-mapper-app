@@ -6,5 +6,6 @@
       "@habit-mapper-app/infrastructures/*": ["infrastructures/*", "../infrastructures/*"],
       "@habit-mapper-app/entities": ["entities", "../entities"]
     }
-  }
+  },
+  "exclude": ["**/node_modules", "**/.*/"]
 }
