@@ -111,4 +111,4 @@ yarn run:api:prod
 - [x]  Business rules with persistence
 - [x]  Design & UX implementation
 
-token: ***REMOVED***
+token: env.token
