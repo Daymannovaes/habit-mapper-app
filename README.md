@@ -5,7 +5,7 @@ You can check it in the url https://knowyourhabit.com
 
 <p align="center">
   <img src="https://github.com/Daymannovaes/habit-mapper-app/blob/main/packages/interfaces/resources/icon.png" alt="Know Your Habit icon" width="280">
-</p>
+</p>gpsu
 
 ## Run
 ```bash
@@ -110,3 +110,5 @@ yarn run:api:prod
 - [x]  Business rules implementation (without persistence, raw HTML, without CSS)
 - [x]  Business rules with persistence
 - [x]  Design & UX implementation
+
+token: ***REMOVED***
