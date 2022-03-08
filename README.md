@@ -14,6 +14,7 @@ yarn install
 
 # setup database
 cd infrastructures
+token: ***REMOVED***
 
 yarn database:start:dev
 yarn database:migrate:create
