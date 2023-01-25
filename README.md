@@ -17,7 +17,7 @@ cd infrastructures
 
 yarn database:start:dev
 yarn database:migrate:create
-yarn database:migrate up
+yarn database:migrate upaa
 
 # setup aws amplify (for authentication flow)
 yarn amplify:pull # choose aws as src dir
