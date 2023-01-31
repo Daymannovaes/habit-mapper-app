@@ -1,4 +1,4 @@
-# habit-mapper-app   
+# habit-mapper-app      
 Simple application to map habits based in [Judson Brewer's research](https://drjud.com/wp-content/uploads/2021/03/Unwinding-Anxiety-Habit-Mapper-from-DrJud-1-1.pdf).
 
 You can check it in the url https://knowyourhabit.com
@@ -17,7 +17,7 @@ cd infrastructures
 
 yarn database:start:dev
 yarn database:migrate:create
-yarn database:migrate up
+yarn database:migrate upaa
 
 # setup aws amplify (for authentication flow)
 yarn amplify:pull # choose aws as src dir
