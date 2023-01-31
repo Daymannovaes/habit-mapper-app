@@ -20,7 +20,7 @@ yarn database:migrate:create
 yarn database:migrate upaa
 
 # setup aws amplify (for authentication flow)
-yarn amplify:pull # choose aws as src dir
+yarn amplify:pull # choose aws as src dir1
 
 cd ../
 
